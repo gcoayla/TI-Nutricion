@@ -5,7 +5,7 @@
     Backend: Laravel
     Base de datos: Postgresql
 ## Integrantes
-    Oscar David Pfuturi Huisa
+    Fabricio Jose Barrionuevo Paredes
     Gonzalo Eduardo Coayla Zuñiga
     Joao Franco Emanuel Chavez Salas
-    Fabricio Jose Barrionuevo Paredes
+    Oscar David Pfuturi Huisa
