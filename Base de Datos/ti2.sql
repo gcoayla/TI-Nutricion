@@ -11,9 +11,9 @@ CREATE TABLE usuario (
     peso numeric(5,2),
     altura numeric(3,2),
     nivel_actividad integer, -- ???
-    meta_diaria varchar(50),
-    indice_masa_corporal varchar(50),
-    tasa_metabolica integer
+    meta_diaria integer, -- calorias a bajar
+    imc numeric(5,2), -- índice de masa corporal
+    tasa_metabolica numeric(5,2)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 CREATE TABLE alimentos (
@@ -21,8 +21,8 @@ CREATE TABLE alimentos (
     nombre varchar(100) NOT NULL,
     calorias integer NOT NULL,
     tipo varchar(50), -- vegetales, carnes, etc
-    popularidad integer AUTO_INCREMENT
-)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+    popularidad integer
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 CREATE TABLE usuario_consume (
     id_usuario integer,
@@ -71,6 +71,7 @@ INSERT INTO alimentos (id, nombre, calorias, tipo) VALUES
 INSERT INTO usuario_consume (id_usuario, id_alimento, cantidad, fecha) VALUES
 (1, 2, 1, '2020-10-10'),
 (1, 3, 1, '2020-10-10');
+
 
 
 INSERT INTO receta (id, nombre) VALUES
