@@ -1,0 +1,457 @@
+/* Colores */
+/*
+    Gris: #A4A4A4
+    Verde oscuro: #304700
+    Verde claro: #93D900
+*/
+/* Fuentes */
+
+/* Neutralidad */
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Source Serif Pro', serif;
+}
+/* General */
+body{
+}
+section{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h2{
+    font-size: 1.4em;
+    text-align: center;
+}
+h3{
+    font-size: 1.4em;
+}
+h4{
+    font-size: 1.4em;
+    text-align: center;
+    padding-top: 0.4em;
+    font-style: italic;
+    font-weight: 700
+}
+h7{
+    display: block;
+}
+/* Header */
+header{
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-bottom: #A4A4A4 solid 2px;
+}
+/* section */
+section{
+}
+/* Datos */
+#datos-nutri{
+    width:100%;
+    float: left;
+    overflow: hidden;
+    margin: 20px 0px;
+}
+#datos-nutri-prin{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#calorias{
+    width: 40%;
+    float: left;
+}
+#cont-progress{
+    width: 90%;
+    margin: 35px auto;
+    margin-bottom: 10px
+}
+.dato-progress{
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+#cont-macros{
+    float: left;
+    width: 60%;
+}
+
+#macros{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+#display-sec{
+    width: 100%;
+    height: 20px;
+    float: left;
+    border-bottom: #A4A4A4 solid 2px;
+    border-top: #A4A4A4 solid 2px;
+    margin-top: 30px;
+    background-image: url(../images/abajo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#display-sec:hover{
+    cursor: pointer;
+}
+#datos-nutri-sec{
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+    overflow: hidden;   
+}
+.sub-nutri-sec{
+    width: 25%;
+    float: left;
+}
+/* Selector alimentos */
+#selector-alim{
+    width: 50%;
+    float: left;
+}
+#cont-selector-alim{
+    width: 70%;
+    margin: 20px auto;
+}
+.cajaalim{
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+.cajaalim:hover{
+    cursor: pointer;
+}
+.der-cajaalim{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #424242;
+    border-top: 0px;
+    padding-bottom: 10px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: none;
+}
+.busqueda{
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid #424242;
+    border-radius: 10px;
+}
+.tex-comidas{
+    font-size: 1.2em;
+    padding-left: 5%;
+}
+.res-busqueda{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.box-res-busqueda{
+    border-top: 1px solid #424242;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.nombre-alim{
+    width: 60%;
+    float: left;
+}
+.btn-alim{
+    width: 10%;
+    float: left;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+.medida-alim{
+    width: 8%;
+    float: left;
+    margin-left: 2%
+}
+.env-alim{
+    width: 20%;
+    height: 2em;
+    float: left;
+    margin-top: 10px;
+    border-radius: 7px;
+    color: white;
+    background-color: #D32F2F;
+    border:0px;
+}
+.env-alim:hover{
+    cursor: pointer;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+/* Muestra alimentos */
+#alimentos-cons{
+    width: 50%;
+    float: left;
+}
+#cont-alim-cons{
+    width: 70%;
+    margin: 20px auto;
+}
+.alim-cons-tit{
+    height: 35px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    font-weight: 700;
+    font-size: 1.4em;
+}
+#mos-desa{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#mos-snac{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.sub-alim-cons-tit{
+    border-right: 1px solid #424242;
+    border-left: 1px solid #424242;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.modmedida{
+    width: 18%;
+}
+/* footer */
+footer{
+    margin-top: 50px;
+    height: 150px;
+    background-color: #424242;
+}
+/* Clases */
+.tecolor{
+    color: white;
+}
+.bgazul{
+    background-color: #03A9F4;
+}
+.bgverde{
+    background-color: #4CAF50;
+}
+.bgama{
+    background-color: #FFC107;
+}
+.bgnaran{
+    background-color: #FF5722;
+}
+/* Barra */
+.meter { 
+			height: 40px;  /* Can be anything */
+			position: relative;
+			margin: 10px 0 10px 0; /* Just for demo spacing */
+			background: #FFF;
+            border: #A4A4A4 solid 3px;
+			-moz-border-radius: 25px;
+			-webkit-border-radius: 25px;
+			border-radius: 25px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		.meter > span {
+			display: block;
+			height: 100%;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			background-color: rgb(43,194,83);
+			background-image: -webkit-gradient(
+			  linear,
+			  left bottom,
+			  left top,
+			  color-stop(0, rgb(43,194,83)),
+			  color-stop(1, rgb(84,240,84))
+			 );
+			background-image: -moz-linear-gradient(
+			  center bottom,
+			  rgb(43,194,83) 37%,
+			  rgb(43,194,83) 69%
+			 );
+			-webkit-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			-moz-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			position: relative;
+			overflow: hidden;
+		}
+		.meter > span:after, .animate > span > span {
+			content: "";
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			
+			background-image: 
+				-moz-linear-gradient(
+				  -45deg, 
+			      rgba(255, 255, 255, .2) 25%, 
+			      transparent 25%, 
+			      transparent 50%, 
+			      rgba(255, 255, 255, .2) 50%, 
+			      rgba(255, 255, 255, .2) 75%, 
+			      transparent 75%, 
+			      transparent
+			   );
+			z-index: 1;
+			-webkit-background-size: 50px 50px;
+			-moz-background-size: 50px 50px;
+			/*-webkit-animation: move 2s linear infinite;*/
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			overflow: hidden;
+		}
+		
+		.animate > span:after {
+			display: none;
+		}
+		
+		@-webkit-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 50px 50px;
+		    }
+		}
+		
+		.orange > span {
+			background-color: #f1a165;
+			background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
+			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1a165),color-stop(1, #f36d0a));
+			background-image: -webkit-linear-gradient(#f1a165, #f36d0a); 
+		}
+		
+		.red > span {
+			background-color: #f0a3a3;
+			background-image: -moz-linear-gradient(top, #f0a3a3, #FF1744);
+			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f0a3a3),color-stop(1, #FF1744));
+			background-image: -webkit-linear-gradient(#f0a3a3, #FF1744);
+		}
+		
+		.nostripes > span > span, .nostripes > span:after {
+			-webkit-animation: none;
+			background-image: none;
+		}
+/* Barra circular */
+:root {
+    --default-background: rgb(255, 255, 255);
+    --color: black;
+    --rad-bg-dark: rgb(13, 71, 161);
+    --rad-bg-data: rgb(41, 121, 255);
+    --red: rgb(255,23,68);
+    --red-dark: rgb(183,28,28);
+    --ama: rgb(255,234,0);
+    --ama-dark: rgb(245,127,23);
+}
+
+.graph-container,
+.graphic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.graph-container {
+    position: relative;
+    margin: 0pt;
+}
+
+.graphic {
+    background-image: linear-gradient(var(--rad-bg-dark) 50%, var(--rad-bg-data) 50%);
+    transform: rotate(120deg);
+    animation: rotate 1.5s linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.data,
+.data::after {
+    position: absolute;
+    background-color: var(--default-background);
+}
+
+.data {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    top: 12.5%;
+    left: 12.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.data::after {
+    content: "";
+    width: 200px;
+    height: 100px;
+    top: 50%;
+    z-index: -1;
+}
+
+.graph-group {
+    width: 100% auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+p {
+    margin: 0;
+    font-size: 1.1em
+}
+
+.input {
+    display: flex;
+}
+
+.w3-input {
+    margin-right: 20pt;
+}
