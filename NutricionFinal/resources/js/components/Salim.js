@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SSalim from './SubSalim';
-
+import { useCookies } from 'react-cookie';
 function Salim() {
+    
     return(
         <div id="cont-selector-alim">
                 <h2>¿Qué comiste hoy?</h2>

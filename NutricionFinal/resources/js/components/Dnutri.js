@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery'
+import { useCookies } from 'react-cookie';
 
 const graphGroup = document.getElementById('group')
 
@@ -147,6 +148,7 @@ $( document ).ready(function() {
 });
 
 function Dnutri() {
+    const [cookies, setCookie] = useCookies(['Hola']);
     return (
         <div id="dummiecont">
         <div id="datos-nutri-prin">
