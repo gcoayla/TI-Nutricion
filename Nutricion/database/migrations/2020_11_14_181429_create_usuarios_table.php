@@ -21,9 +21,13 @@ class CreateUsuariosTable extends Migration
             $table->timestamp('correo_verificado_el')->nullable();
             $table->string('contrasena');
             $table->rememberToken();
-            $table->tinyInteger('edad');
-            $table->decimal('peso', 5, 2);
-            $table->decimal('altura', 3, 2);
+            $table->tinyInteger('edad')->nullable();
+            $table->decimal('peso', 5, 2)->nullable();
+            $table->decimal('altura', 3, 2)->nullable();
+            $table->integer('nivel_actividad')->nullable();
+            $table->integer('meta_diaria')->nullable();
+            $table->decimal('imc', 5, 2)->nullable();
+            $table->decimal('tasa_meta', 5, 2)->nullable();
             $table->timestamps();
         });
     }

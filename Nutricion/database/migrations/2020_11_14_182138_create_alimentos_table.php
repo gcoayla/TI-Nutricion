@@ -19,6 +19,23 @@ class CreateAlimentosTable extends Migration
             $table->integer('calorias');
             $table->string('tipo', 50);
             $table->integer('popularidad');
+            $table->decimal('proteinas', 5, 2);
+            $table->decimal('azucares', 5, 2);
+            $table->decimal('almidones', 5, 2);
+            $table->decimal('fibra', 5, 2);
+            $table->decimal('grasas_saturadas', 5, 2);
+            $table->decimal('grasas_trans', 5, 2);
+            $table->decimal('grasas_insaturadas', 5, 2);
+            $table->decimal('calcio', 5, 2);
+            $table->decimal('zinc', 5, 2);
+            $table->decimal('hierro', 5, 2);
+            $table->decimal('magnesio', 5, 2);
+            $table->decimal('potasio', 5, 2);
+            $table->decimal('vitaminaA', 5, 2);
+            $table->decimal('vitaminaC', 5, 2);
+            $table->decimal('vitaminaD', 5, 2);
+            $table->decimal('vitaminaE', 5, 2);
+            $table->decimal('vitaminaK', 5, 2);
             $table->timestamps();
         });
     }
