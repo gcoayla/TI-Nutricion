@@ -21,6 +21,14 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->tinyInteger('edad')->nullable();
+            $table->integer('peso')->nullable();
+            $table->integer('altura')->nullable();
+            //$table->integer('nivel_actividad')->nullable();
+            //$table->integer('meta_diaria')->nullable();
+            //$table->decimal('imc', 5, 2)->nullable();
+            //$table->decimal('tasa_meta', 5, 2)->nullable();
+            //$table->timestamps();
         });
     }
 

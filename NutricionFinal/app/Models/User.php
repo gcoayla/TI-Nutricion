@@ -20,6 +20,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'edad',
+        'peso',
+        'altura',
     ];
 
     /**
@@ -41,3 +44,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+/*
+{
+    "name":"Fabricio",
+    "email":"za@gmail.com",
+    "password":"hola",
+    "edad":"25",
+    "peso":"70",
+    "altura":"170"
+}
+
+*/
