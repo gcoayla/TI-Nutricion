@@ -158,7 +158,7 @@ function Dnutri() {
                     </div>
                     <div id="cont-progress">
                         <div className="meter red">
-                            <span style={{width: '30%'}} ></span>
+                            <span style={{width: '80%'}} ></span>
                         </div>
                     </div>
                     <div className="dato-progress">

@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts/template')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,700;1,400;1,700&display=swap" rel="stylesheet">
+@section('title', 'Home')
 
-</head>
+@section('content')
 
-<body>
-
-    <!-- React root DOM -->
-    <header></header>
+    <header>
+       
+    </header>
     <section>
         <div id="datos-nutri"></div>
         <div id="selector-alim"></div>
         <div id="alimentos-cons"></div>
     </section>
-    <footer></footer>
+    <datalist id="alimentos">
+    
+    </datalist>
 
-    <!-- React JS -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-</body>
-</html>
+<footer></footer>
+@endsection

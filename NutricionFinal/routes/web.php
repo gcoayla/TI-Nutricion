@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -14,7 +15,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::post("login",[UserController::class,'login']);
+Route::get('/', HomeController::class);
+
+Route::post("login",[UserController::class, 'login']);
+
+Route::get("/home/{user}", HomeController::class);
+
+Route::get("/login", [HomeController::class, 'login']);

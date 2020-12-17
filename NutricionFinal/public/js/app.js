@@ -67093,7 +67093,7 @@ function Dnutri() {
     className: "meter red"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     style: {
-      width: '30%'
+      width: '80%'
     }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "dato-progress"
@@ -67214,7 +67214,8 @@ var SSalim = function SSalim(_ref) {
   }, "Ingresa un alimento"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "busqueda",
-    id: "busqueda-" + identi
+    id: "busqueda-" + identi,
+    list: "alimentos"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "res-busqueda",
     id: "res-busqueda-" + identi
@@ -67243,8 +67244,8 @@ var SSalim = function SSalim(_ref) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/fabs/Escritorio/PROYECTO/TI-Nutricion/NutricionFinal/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/fabs/Escritorio/PROYECTO/TI-Nutricion/NutricionFinal/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\TI-Nutricion\NutricionFinal\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\TI-Nutricion\NutricionFinal\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
