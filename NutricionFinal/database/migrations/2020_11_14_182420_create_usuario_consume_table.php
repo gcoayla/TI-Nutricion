@@ -18,10 +18,10 @@ class CreateUsuarioConsumeTable extends Migration
             $table->foreignId('usuario_id')->references('id')->on('users')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
-            // $table->integer('alimento_id')->unsigned();
             $table->foreignId('alimento_id')->references('id')->on('alimentos')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
+            $table->tinyInteger('tipo');
             $table->decimal('cantidad', 5, 2);
             $table->date('fecha');
             $table->timestamps();

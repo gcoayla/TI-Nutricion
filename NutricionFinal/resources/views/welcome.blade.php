@@ -5,7 +5,6 @@
 @section('content')
 
     <header>
-       
     </header>
     <section>
         <div id="datos-nutri"></div>
@@ -13,7 +12,9 @@
         <div id="alimentos-cons"></div>
     </section>
     <datalist id="alimentos">
-    
+    @foreach ($alimentos as $alimento)
+        <option value="{{ $alimento->nombre }}">{{ $alimento->nombre }}</option>
+    @endforeach
     </datalist>
 
 <footer></footer>
