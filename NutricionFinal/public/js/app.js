@@ -67216,7 +67216,11 @@ var SSalim = function SSalim(_ref) {
     className: "busqueda",
     id: "busqueda-" + identi,
     list: "alimentos"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    id: "send-btn",
+    className: "send"
+  }, "Agregar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "res-busqueda",
     id: "res-busqueda-" + identi
   }));

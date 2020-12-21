@@ -21,4 +21,6 @@ Route::post("login",[UserController::class, 'login']);
 
 Route::get("/home/{user}", HomeController::class);
 
+Route::post("/alimento", [HomeController::class, 'store'])->name('alimento.store');
+
 Route::get("/login", [HomeController::class, 'login']);
