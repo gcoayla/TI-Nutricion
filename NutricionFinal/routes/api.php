@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\sAlimentosController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +23,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post("register",[UserController::class,'register']);
 Route::post("login",[UserController::class,'login']);
+
+Route::get("list",[sAlimentosController::class,'lista']);
+
 
 //Route::get("data",[dummy::class,'getData']);
 //Route::apiResource('alimento','AlimentosController');
