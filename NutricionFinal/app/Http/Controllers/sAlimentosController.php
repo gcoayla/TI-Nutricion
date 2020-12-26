@@ -16,6 +16,6 @@ class sAlimentosController extends Controller
 
     function search($parametro)
     {
-        return Alimento::where("nombre","like","%".$parametro."%")->get("nombre");
+        return Alimento::where("nombre","like","%".$parametro."%")->orderBy("popularidad","desc")->get("nombre");
     }
 }
