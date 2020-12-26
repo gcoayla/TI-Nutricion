@@ -22,8 +22,8 @@ class CreateUsuarioConsumeTable extends Migration
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
             $table->tinyInteger('tipo');
-            $table->decimal('cantidad', 5, 2);
-            $table->date('fecha');
+            //$table->decimal('cantidad', 5, 2);
+            //$table->date('fecha');
             $table->timestamps();
         });
     }

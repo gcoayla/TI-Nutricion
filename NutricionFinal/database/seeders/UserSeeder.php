@@ -48,3 +48,11 @@ class UserSeeder extends Seeder
         $usuario3->save();
     }
 }
+/*{
+    "name":"juans",
+    "email":"juans@gmail.com",
+    "password":"123",
+    "edad":"22",
+    "peso":"79",
+    "altura":"172"
+}*/

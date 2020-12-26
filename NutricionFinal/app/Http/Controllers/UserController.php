@@ -20,7 +20,7 @@ class UserController extends Controller
          }
          else
          {
-             $req->session()->put('user',$user);
+             $req->session()->put('users',$user);
              return ["Result"=>"loged"];
              //return redirect('/');
          }
