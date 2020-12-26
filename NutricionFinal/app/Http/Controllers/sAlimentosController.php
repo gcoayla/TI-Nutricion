@@ -12,4 +12,10 @@ class sAlimentosController extends Controller
     {
          return Alimento::all();
     }
+
+
+    function search($parametro)
+    {
+        return Alimento::where("nombre","like","%".$parametro."%")->get("nombre");
+    }
 }

@@ -24,7 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post("register",[UserController::class,'register']);
 Route::post("login",[UserController::class,'login']);
 
-Route::get("list",[sAlimentosController::class,'lista']);
+Route::get("lista",[sAlimentosController::class,'lista']);
+Route::get("search/{parametro}",[sAlimentosController::class,'search']);
 
 
 //Route::get("data",[dummy::class,'getData']);
