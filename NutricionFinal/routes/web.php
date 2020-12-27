@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use App\Models\Alimento;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,10 @@ Route::get('/a',function(){
     return $user;//->alimento();
 
     //return $user = App\Models\User::where("usuario_id",2)->alimento()->get("nombre");
+
+    /*$alimento = App\Models\Alimento::find(1)->users()->get();
+
+    return $alimento;//->alimento();*/
 
 });
 

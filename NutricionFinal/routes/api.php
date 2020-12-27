@@ -27,9 +27,15 @@ Route::post("login",[UserController::class,'login']);
 
 Route::get("lista",[sAlimentosController::class,'lista']);
 Route::get("search/{parametro}",[sAlimentosController::class,'search']);
+
 Route::get("prueba",[sAlimentosController::class,'prueba']);
 
 Route::get("desayuno",[ConsumerController::class,'getDesayuno']);
+Route::get("almuerzo",[ConsumerController::class,'getAlmuerzo']);
+Route::get("cena",[ConsumerController::class,'getCena']);
+Route::get("aperitivos",[ConsumerController::class,'getAperitivos']);
+
+
 
 //http://127.0.0.1:8000/api/search/
 //Route::get("data",[dummy::class,'getData']);
