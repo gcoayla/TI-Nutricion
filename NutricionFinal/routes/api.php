@@ -27,6 +27,6 @@ Route::post("login",[UserController::class,'login']);
 Route::get("lista",[sAlimentosController::class,'lista']);
 Route::get("search/{parametro}",[sAlimentosController::class,'search']);
 
-
+//http://127.0.0.1:8000/api/search/
 //Route::get("data",[dummy::class,'getData']);
 //Route::apiResource('alimento','AlimentosController');

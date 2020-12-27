@@ -45,6 +45,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function alimento()
+    {
+        return $this->belongsToMany(Alimento::class,"usuario_consume","usuario_id","alimento_id");
+    }
+
+
 }
 /*
 {

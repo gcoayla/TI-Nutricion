@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,15 @@ Route::get('/', HomeController::class);
 Route::post("login",[UserController::class, 'login']);
 
 Route::get("/home/{user}", HomeController::class);
+
+Route::get('/a',function(){
+
+    $user = App\Models\User::findOrFail(2);
+
+    return $user->alimento;
+
+});
+
 
 Route::post("/alimento", [HomeController::class, 'store'])->name('alimento.store');
 
