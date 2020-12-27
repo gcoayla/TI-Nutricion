@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ConsumerController;
 
 use App\Http\Controllers\sAlimentosController;
 /*
@@ -26,6 +27,9 @@ Route::post("login",[UserController::class,'login']);
 
 Route::get("lista",[sAlimentosController::class,'lista']);
 Route::get("search/{parametro}",[sAlimentosController::class,'search']);
+Route::get("prueba",[sAlimentosController::class,'prueba']);
+
+Route::get("desayuno",[ConsumerController::class,'getDesayuno']);
 
 //http://127.0.0.1:8000/api/search/
 //Route::get("data",[dummy::class,'getData']);

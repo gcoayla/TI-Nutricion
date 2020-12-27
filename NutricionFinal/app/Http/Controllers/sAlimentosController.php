@@ -20,14 +20,9 @@ class sAlimentosController extends Controller
         ->orderBy("popularidad","desc")->take(5)->get("nombre");
     }
 
-    function agregar_desayuno($nombre)
+    function prueba()
     {
-        $alimento = Alimento::where("nombre",$parametro)->get();
-        $consume = new usuario_consume;
-        $consume->alimento_id=$alimento->id;
-        $consume->tipo=1;
-
-        $consume->save();
-        return ("/");
+        return Alimento::where("id",2)->get("nombre");
     }
+
 }

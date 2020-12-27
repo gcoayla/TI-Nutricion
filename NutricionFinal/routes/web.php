@@ -23,9 +23,11 @@ Route::get("/home/{user}", HomeController::class);
 
 Route::get('/a',function(){
 
-    $user = App\Models\User::findOrFail(2);
+    $user = App\Models\User::find(2)->alimento()->get();
 
-    return $user->alimento;
+    return $user;//->alimento();
+
+    //return $user = App\Models\User::where("usuario_id",2)->alimento()->get("nombre");
 
 });
 
