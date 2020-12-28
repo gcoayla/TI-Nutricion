@@ -17,7 +17,7 @@ class ConsumerController extends Controller
         $resultado = json_decode($alimento);*/
 
         $consume = new consumer;
-        $consume->alimento_id=$nombre->alinid;
+        $consume->alimento_id=$nombre->alimid;
         $consume->usuario_id=1;
         $consume->cantidad=$nombre->gramos;
         $consume->tipo=$nombre->tipocomida;
