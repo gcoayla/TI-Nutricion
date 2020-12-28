@@ -25,7 +25,7 @@ class ConsumerController extends Controller
         $consume->save();
         return redirect("/");
     }
-    function agregar_almuerzo(Request $nombre)
+   /* function agregar_almuerzo(Request $nombre)
     {
         $consume = new consumer;
         $consume->alimento_id=$nombre->alinit;
@@ -61,7 +61,7 @@ class ConsumerController extends Controller
         return redirect("/");
     }
 
-
+*/
     function getDesayuno()
     {//
         $cons=consumer::where("tipo",1)->get("alimento_id");

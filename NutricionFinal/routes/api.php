@@ -41,9 +41,9 @@ Route::get("carbohidratos",[ConsumerController::class,'getCarbohidratos']);
 Route::get("grasas",[ConsumerController::class,'getGrasas']);
 
 Route::post("consum",[ConsumerController::class,'agregar_desayuno']);
-Route::post("consum2",[ConsumerController::class,'agregar_almuerzo']);
+/*Route::post("consum2",[ConsumerController::class,'agregar_almuerzo']);
 Route::post("consum3",[ConsumerController::class,'agregar_cena']);
-Route::post("consum4",[ConsumerController::class,'agregar_aperitivo']);
+Route::post("consum4",[ConsumerController::class,'agregar_aperitivo']);*/
 
 
 //http://127.0.0.1:8000/api/search/
