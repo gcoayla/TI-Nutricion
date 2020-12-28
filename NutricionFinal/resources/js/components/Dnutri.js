@@ -36,24 +36,38 @@ function setRotation(percentage, id) {
     container.style.transform = `rotate(${rotation}deg)`
 }
 
-function llenado(){
-        fetch("http://127.0.0.1:8000/api/valores/")
+
+
+$( document ).ready(function() {
+    var protes=0;
+    var carbos=0;
+    var grasas=0;
+    var calo=0;
+    
+        var url = "http://127.0.0.1:8000/api/valores/";
+        var elemento = "elem";
+        url += elemento;
+        console.log(url);
+        fetch(url)
         .then((resp) => resp.json())
         .then(data => {
-            console.log(data);
+            calo=Number(data[0]);
+            protes=Number(data[1]);
+            carbos=Number(data[2]);
+            grasas=Number(data[3]);
+            $("#numerodecalorias").html(calo+"/2000")
+            $("#barradeprogreso").css("width",calo*100/2000+"%");
+            generar(protes*100/120,"Proteinas",protes,120);
+            $("#Proteinas-content").css("background-image","linear-gradient(var(--red-dark) 50%, var(--red) 50%)");
+            generar(carbos*100/250,"Carbohidratos",carbos,250);
+            generar(grasas*100/70,"Grasas",grasas,70);
+
         })
         .catch(function(error) {
             console.log(error);
         });
-}
-
-
-$( document ).ready(function() {
-    llenado();
-    generar(50,"Proteinas",100,120);
-    $("#Proteinas-content").css("background-image","linear-gradient(var(--red-dark) 50%, var(--red) 50%)");
-    generar(70,"Carbohidratos",200,250);
-    generar(90,"Grasas",60,70);
+    
+    
     $("#Grasas-content").css("background-image","linear-gradient(var(--ama-dark) 50%, var(--ama) 50%)");
     var muestra=0;
     $("#display-sec").click(function() {
@@ -171,11 +185,11 @@ function Dnutri() {
                     </div>
                     <div id="cont-progress">
                         <div className="meter red">
-                            <span style={{width: '80%'}} ></span>
+                            <span id="barradeprogreso" style={{width: '80%'}} ></span>
                         </div>
                     </div>
                     <div className="dato-progress">
-                        <h3>1670/2000</h3>
+                        <h3 id="numerodecalorias">1670/2000</h3>
                     </div>
                 </div>
                 <div id="cont-macros">

@@ -66868,6 +66868,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SubAcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SubAcons */ "./resources/js/components/SubAcons.js");
+
 
 
 
@@ -66877,33 +66879,24 @@ function Acons() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Alimentos de hoy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alim-cons-tit bgazul",
     id: "mos-desa"
-  }, "Desayuno"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "sub-alim-cons-tit"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    className: "box-res-busqueda",
-    method: "post"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "nombre-alim"
-  }, "Pollo frito"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    name: "alimid",
-    type: "hidden",
-    value: "7845"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "medida-alim modmedida"
-  }, "100 gr."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "submit",
-    className: "env-alim",
-    value: "Eliminar"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Desayuno"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SubAcons__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    identi: "desayuno"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alim-cons-tit bgverde",
     id: "mos-almu"
-  }, "Almuerzo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Almuerzo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SubAcons__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    identi: "almuerzo"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alim-cons-tit bgama",
     id: "mos-cena"
-  }, "Cena"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Cena"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SubAcons__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    identi: "cena"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alim-cons-tit bgnaran",
     id: "mos-snac"
-  }, "Snacks"));
+  }, "Snacks"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SubAcons__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    identi: "snacks"
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Acons);
@@ -66967,22 +66960,31 @@ function setRotation(percentage, id) {
   container.style.transform = "rotate(".concat(rotation, "deg)");
 }
 
-function llenado() {
-  fetch("http://127.0.0.1:8000/api/valores").then(function (resp) {
+jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
+  var protes = 0;
+  var carbos = 0;
+  var grasas = 0;
+  var calo = 0;
+  var url = "http://127.0.0.1:8000/api/valores/";
+  var elemento = "elem";
+  url += elemento;
+  console.log(url);
+  fetch(url).then(function (resp) {
     return resp.json();
   }).then(function (data) {
-    console.log(data);
+    calo = Number(data[0]);
+    protes = Number(data[1]);
+    carbos = Number(data[2]);
+    grasas = Number(data[3]);
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("#numerodecalorias").html(calo + "/2000");
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("#barradeprogreso").css("width", calo * 100 / 2000 + "%");
+    generar(protes * 100 / 120, "Proteinas", protes, 120);
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("#Proteinas-content").css("background-image", "linear-gradient(var(--red-dark) 50%, var(--red) 50%)");
+    generar(carbos * 100 / 250, "Carbohidratos", carbos, 250);
+    generar(grasas * 100 / 70, "Grasas", grasas, 70);
   })["catch"](function (error) {
     console.log(error);
   });
-}
-
-jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
-  llenado();
-  generar(50, "Proteinas", 100, 120);
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#Proteinas-content").css("background-image", "linear-gradient(var(--red-dark) 50%, var(--red) 50%)");
-  generar(70, "Carbohidratos", 200, 250);
-  generar(90, "Grasas", 60, 70);
   jquery__WEBPACK_IMPORTED_MODULE_2___default()("#Grasas-content").css("background-image", "linear-gradient(var(--ama-dark) 50%, var(--ama) 50%)");
   var muestra = 0;
   jquery__WEBPACK_IMPORTED_MODULE_2___default()("#display-sec").click(function () {
@@ -67103,12 +67105,15 @@ function Dnutri() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "meter red"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    id: "barradeprogreso",
     style: {
       width: '80%'
     }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "dato-progress"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "1670/2000"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    id: "numerodecalorias"
+  }, "1670/2000"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "cont-macros"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "dato-progress"
@@ -67191,6 +67196,52 @@ function Salim() {
 if (document.getElementById('selector-alim')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Salim, null), document.getElementById('selector-alim'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/SubAcons.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/SubAcons.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+
+
+jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
+  var url = "http://127.0.0.1:8000/api/desayuno/";
+  console.log(url);
+  fetch(url).then(function (resp) {
+    return resp.json();
+  }).then(function (data) {
+    data.forEach(function (element) {
+      console.log(element[0].nombre);
+      var caja = "<form className='box-res-busqueda' method='post'><h5 className='nombre-alim'>";
+      var caja2 = '</h5><input name="alimid" type="hidden" value="7845"/><h5 className="medida-alim modmedida">100 gr.</h5><input type="submit" className="env-alim" value="Eliminar"/></form>';
+      caja += element[0].nombre;
+      caja += caja2;
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#subaconsdesayuno").html(caja);
+    });
+  })["catch"](function (error) {
+    console.log(error);
+  });
+});
+
+var SAcons = function SAcons(_ref) {
+  var identi = _ref.identi;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sub-alim-cons-tit",
+    id: "subacons" + identi
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SAcons);
 
 /***/ }),
 
