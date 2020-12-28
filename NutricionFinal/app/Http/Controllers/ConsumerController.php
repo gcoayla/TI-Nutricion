@@ -13,26 +13,23 @@ class ConsumerController extends Controller
     //
     function agregar_desayuno(Request $nombre)
     {
-        $alimento = Alimento::where("nombre",$nombre)->get("id");
-        $resultado = json_decode($alimento);
+        /*$alimento = Alimento::where("nombre",$nombre)->get("id");
+        $resultado = json_decode($alimento);*/
 
         $consume = new consumer;
-        $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=$resultado[0]->id;
-        $consume->tipo=$resultado[0]->id;
+        $consume->alimento_id=$nombre->alimento_id;
+        $consume->usuario_id=$nombre->usuario_id;
+        $consume->tipo=$nombre->tipo;
 
         $consume->save();
         return redirect("/");
     }
     function agregar_almuerzo(Request $nombre)
     {
-        $alimento = Alimento::where("nombre",$nombre)->get("id");
-        $resultado = json_decode($alimento);
-
         $consume = new consumer;
-        $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=$resultado[0]->id;
-        $consume->tipo=$resultado[0]->id;
+        $consume->alimento_id=$nombre->alimento_id;
+        $consume->usuario_id=$nombre->usuario_id;
+        $consume->tipo=$nombre->tipo;
 
         $consume->save();
         return redirect("/");
@@ -40,13 +37,10 @@ class ConsumerController extends Controller
     }
     function agregar_cena(Request $nombre)
     {
-        $alimento = Alimento::where("nombre",$nombre)->get("id");
-        $resultado = json_decode($alimento);
-
         $consume = new consumer;
-        $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=$resultado[0]->id;
-        $consume->tipo=$resultado[0]->id;
+        $consume->alimento_id=$nombre->alimento_id;
+        $consume->usuario_id=$nombre->usuario_id;
+        $consume->tipo=$nombre->tipo;
 
         $consume->save();
         return redirect("/");
@@ -54,17 +48,13 @@ class ConsumerController extends Controller
     }
     function agregar_aperitivo(Request $nombre)
     {
-        $alimento = Alimento::where("nombre",$nombre)->get("id");
-        $resultado = json_decode($alimento);
-
         $consume = new consumer;
-        $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=$resultado[0]->id;
-        $consume->tipo=$resultado[0]->id;
+        $consume->alimento_id=$nombre->alimento_id;
+        $consume->usuario_id=$nombre->usuario_id;
+        $consume->tipo=$nombre->tipo;
 
         $consume->save();
         return redirect("/");
-    }
     }
 
 
