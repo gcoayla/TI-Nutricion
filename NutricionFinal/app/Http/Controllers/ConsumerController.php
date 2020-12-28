@@ -17,9 +17,10 @@ class ConsumerController extends Controller
         $resultado = json_decode($alimento);*/
 
         $consume = new consumer;
-        $consume->alimento_id=$nombre->alimento_id;
-        $consume->usuario_id=$nombre->usuario_id;
-        $consume->tipo=$nombre->tipo;
+        $consume->alimento_id=$nombre->alinit;
+        $consume->usuario_id=1;
+        $consume->cantidad=$nombre->gramos;
+        $consume->tipo=$nombre->tipocomida;
 
         $consume->save();
         return redirect("/");
@@ -27,9 +28,10 @@ class ConsumerController extends Controller
     function agregar_almuerzo(Request $nombre)
     {
         $consume = new consumer;
-        $consume->alimento_id=$nombre->alimento_id;
-        $consume->usuario_id=$nombre->usuario_id;
-        $consume->tipo=$nombre->tipo;
+        $consume->alimento_id=$nombre->alinit;
+        $consume->usuario_id=1;
+        $consume->cantidad=$nombre->gramos;
+        $consume->tipo=$nombre->tipocomida;
 
         $consume->save();
         return redirect("/");
@@ -38,9 +40,10 @@ class ConsumerController extends Controller
     function agregar_cena(Request $nombre)
     {
         $consume = new consumer;
-        $consume->alimento_id=$nombre->alimento_id;
-        $consume->usuario_id=$nombre->usuario_id;
-        $consume->tipo=$nombre->tipo;
+        $consume->alimento_id=$nombre->alinit;
+        $consume->usuario_id=1;
+        $consume->cantidad=$nombre->gramos;
+        $consume->tipo=$nombre->tipocomida;
 
         $consume->save();
         return redirect("/");
@@ -49,9 +52,10 @@ class ConsumerController extends Controller
     function agregar_aperitivo(Request $nombre)
     {
         $consume = new consumer;
-        $consume->alimento_id=$nombre->alimento_id;
-        $consume->usuario_id=$nombre->usuario_id;
-        $consume->tipo=$nombre->tipo;
+        $consume->alimento_id=$nombre->alinit;
+        $consume->usuario_id=1;
+        $consume->cantidad=$nombre->gramos;
+        $consume->tipo=$nombre->tipocomida;
 
         $consume->save();
         return redirect("/");
