@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ConsumerController;
 
 use App\Http\Controllers\sAlimentosController;
 /*
@@ -27,6 +28,24 @@ Route::post("login",[UserController::class,'login']);
 Route::get("lista",[sAlimentosController::class,'lista']);
 Route::get("search/{parametro}",[sAlimentosController::class,'search']);
 
+Route::get("prueba",[sAlimentosController::class,'prueba']);
 
+Route::get("desayuno",[ConsumerController::class,'getDesayuno']);
+Route::get("almuerzo",[ConsumerController::class,'getAlmuerzo']);
+Route::get("cena",[ConsumerController::class,'getCena']);
+Route::get("aperitivos",[ConsumerController::class,'getAperitivos']);
+
+Route::get("calorias",[ConsumerController::class,'getCalorias']);
+Route::get("proteias",[ConsumerController::class,'getProteinas']);
+Route::get("carbohidratos",[ConsumerController::class,'getCarbohidratos']);
+Route::get("grasas",[ConsumerController::class,'getGrasas']);
+
+Route::post("consum/{nombre}",[ConsumerController::class,'agregar_desayuno']);
+Route::post("consum2/{nombre}",[ConsumerController::class,'agregar_almuerzo']);
+Route::post("consum3/{nombre}",[ConsumerController::class,'agregar_cena']);
+Route::post("consum4/{nombre}",[ConsumerController::class,'agregar_aperitivo']);
+
+
+//http://127.0.0.1:8000/api/search/
 //Route::get("data",[dummy::class,'getData']);
 //Route::apiResource('alimento','AlimentosController');
