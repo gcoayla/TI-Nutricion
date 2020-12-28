@@ -35,7 +35,7 @@ Route::get("almuerzo",[ConsumerController::class,'getAlmuerzo']);
 Route::get("cena",[ConsumerController::class,'getCena']);
 Route::get("aperitivos",[ConsumerController::class,'getAperitivos']);
 
-Route::get("valores",[ConsumerController::class,'getValores']);
+Route::get("valores/{var}",[ConsumerController::class,'getValores']);
 /*Route::get("proteias",[ConsumerController::class,'getProteinas']);
 Route::get("carbohidratos",[ConsumerController::class,'getCarbohidratos']);
 Route::get("grasas",[ConsumerController::class,'getGrasas']);*/
