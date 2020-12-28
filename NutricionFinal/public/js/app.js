@@ -67198,9 +67198,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
 
 
+var url = "http://127.0.0.1:8000/api/search/";
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_1___default()("#busqueda-desayuno").on('input', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_1___default()("#res-busqueda-desayuno").html("listo");
+    var url = "http://127.0.0.1:8000/api/search/";
+    var elemento = jquery__WEBPACK_IMPORTED_MODULE_1___default()("#busqueda-desayuno").val();
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()("#res-busqueda-desayuno").html(" ");
+    url += elemento;
+    console.log(url);
+    fetch(url).then(function (resp) {
+      return resp.json();
+    }).then(function (data) {
+      console.log(data);
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#res-busqueda-desayuno").html(" ");
+      data.forEach(function (element) {
+        var caja = '<form class="box-res-busqueda" method="post"><h5 class="nombre-alim">';
+        var caja2 = '</h5><input name="alimid" type="hidden" value="7845"><input type="number" class="btn-alim"><h5 class="medida-alim">gr.</h5><input type="submit" class="env-alim" value="Añadir"></form>';
+        caja += element.nombre;
+        caja += caja2;
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()("#res-busqueda-desayuno").append(caja);
+      });
+    })["catch"](function (error) {
+      console.log(error);
+    });
   });
 });
 
@@ -67214,13 +67234,8 @@ var SSalim = function SSalim(_ref) {
   }, "Ingresa un alimento"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "busqueda",
-    id: "busqueda-" + identi,
-    list: "alimentos"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    id: "send-btn",
-    className: "send"
-  }, "Agregar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "busqueda-" + identi
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "res-busqueda",
     id: "res-busqueda-" + identi
   }));
@@ -67248,8 +67263,8 @@ var SSalim = function SSalim(_ref) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/fabs/Escritorio/nutric/TI-Nutricion/NutricionFinal/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/fabs/Escritorio/nutric/TI-Nutricion/NutricionFinal/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\gcoay\Desktop\2020-B\TI2\Repo\TI-Nutricion\NutricionFinal\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\gcoay\Desktop\2020-B\TI2\Repo\TI-Nutricion\NutricionFinal\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
