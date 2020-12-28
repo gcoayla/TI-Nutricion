@@ -35,12 +35,13 @@ Route::get("almuerzo",[ConsumerController::class,'getAlmuerzo']);
 Route::get("cena",[ConsumerController::class,'getCena']);
 Route::get("aperitivos",[ConsumerController::class,'getAperitivos']);
 
-Route::get("calorias",[ConsumerController::class,'getCalorias']);
-Route::get("proteias",[ConsumerController::class,'getProteinas']);
+Route::get("valores",[ConsumerController::class,'getValores']);
+/*Route::get("proteias",[ConsumerController::class,'getProteinas']);
 Route::get("carbohidratos",[ConsumerController::class,'getCarbohidratos']);
-Route::get("grasas",[ConsumerController::class,'getGrasas']);
+Route::get("grasas",[ConsumerController::class,'getGrasas']);*/
 
 Route::post("consum",[ConsumerController::class,'agregar_desayuno']);
+//Route::post('cos','ConsumerController@agregar_desayuno');
 /*Route::post("consum2",[ConsumerController::class,'agregar_almuerzo']);
 Route::post("consum3",[ConsumerController::class,'agregar_cena']);
 Route::post("consum4",[ConsumerController::class,'agregar_aperitivo']);*/

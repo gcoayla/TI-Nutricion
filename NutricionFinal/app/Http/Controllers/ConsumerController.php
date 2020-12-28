@@ -130,39 +130,64 @@ class ConsumerController extends Controller
         return $aliment;
     }
 
-    function getCalorias()
+    function getValores()
     {//
-        $cons=consumer::all("alimento_id");
+        $cons=consumer::all();
+
+        $calorias=0;
+        $proteinas=0;
+        $carbohidratos=0;
+        $grasas=0;
+
         $resultado = json_decode($cons);
 
-        $caloria=[];
         $i=0;
         while($i<count($cons))
         {
-            $caloria[$i]=Alimento::where("id",$resultado[$i]->alimento_id)->get("calorias");
+            $alimento=Alimento::where("id",$resultado[$i]->alimento_id)->get();
+            $resultado_alimen = json_decode($alimento);
+            $cantidad= $resultado[$i]->cantidad;
+
+            $calorias_1=$resultado_alimen[0]->calorias;
+            $calorias_1=(int) $calorias_1;
+
+            $proteinas_1=$resultado_alimen[0]->proteinas;
+            $proteinas_1=(int) $proteinas_1;
+
+            $carbohidratos_1=$resultado_alimen[0]->carbohidratos;
+            $carbohidratos_1=(int)$carbohidratos;
+
+            $grasas_1=$resultado_alimen[0]->grasas;
+            $grasas_1=(int) $grasas_1;
+
+            $cantidad=(int)$cantidad;
+
+            $calorias=$calorias + ($calorias_1*$cantidad);
+            $proteinas=$proteinas + ($proteinas_1*$cantidad);
+            $carbohidratos=$carbohidratos + ($carbohidratos_1*$cantidad);
+            $grasas=$grasas + ($grasas_1*$cantidad);
+
+
+
+
             $i=$i+1;
         }
 
-        //return $caloria;
-      //  $resultado2 = json_decode($caloria);
+       /* $object->calo=$calorias;
+        $object->prot=$proteinas;
+        $object->carboh=$carbohidratos;
+        $object->gras=$grasas;
 
+        $TJOSN = json_encode($object);*/
 
-        $j=0;
-        $i=0;
-        while($j<count($caloria))
-        {
-            $resultado2 = json_decode($caloria[$j]);
+        $val=array($calorias,$proteinas,$carbohidratos,$grasas);
 
+        $TsJOSN = json_encode($val);
 
-
-            $i=$i+$resultado2;//[$j]->calorias;
-            $j=$j+1;
-        }
-
-        return $i;
+        return $TsJOSN;
     }
-
-    function getProteinas()
+}
+    /*function getProteinas()
     {
 
     }
@@ -176,7 +201,7 @@ class ConsumerController extends Controller
     {
 
     }
-}
+}*/
 
 //get("alimento_id"); // id alimentos es la foreing key
         //$al=Alimento::where("id",$cons)->get("nombre");
