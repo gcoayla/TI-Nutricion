@@ -13,56 +13,63 @@ class ConsumerController extends Controller
     //
     function agregar_desayuno($nombre)
     {
-        $alimento = Alimento::where("nombre",$parametro)->get();
-        $consume = new usuario_consume;
-        $consume->alimento_id=$alimento->id;
+        $alimento = Alimento::where("nombre",$nombre)->get("id");
+        $resultado = json_decode($alimento);
+
+        $consume = new consumer;
+        $consume->alimento_id=$resultado[0]->id;
+        $consume->usuario_id=1;
         $consume->tipo=1;
 
         $consume->save();
-        return ("/");
+        return redirect("/");
     }
     function agregar_almuerzo($nombre)
     {
-        $alimento = Alimento::where("nombre",$parametro)->get();
-        $consume = new usuario_consume;
-        $consume->alimento_id=$alimento->id;
-        $consume->tipo=1;
+        $alimento = Alimento::where("nombre",$nombre)->get("id");
+        $resultado = json_decode($alimento);
+
+        $consume = new consumer;
+        $consume->alimento_id=$resultado[0]->id;
+        $consume->usuario_id=1;
+        $consume->tipo=2;
 
         $consume->save();
-        return ("/");
+        return redirect("/");
     }
     function agregar_cena($nombre)
     {
-        $alimento = Alimento::where("nombre",$parametro)->get();
-        $consume = new usuario_consume;
-        $consume->alimento_id=$alimento->id;
-        $consume->tipo=1;
+        $alimento = Alimento::where("nombre",$nombre)->get("id");
+        $resultado = json_decode($alimento);
+
+        $consume = new consumer;
+        $consume->alimento_id=$resultado[0]->id;
+        $consume->usuario_id=1;
+        $consume->tipo=3;
 
         $consume->save();
-        return ("/");
+        return redirect("/");
     }
     function agregar_aperitivo($nombre)
     {
-        $alimento = Alimento::where("nombre",$parametro)->get();
-        $consume = new usuario_consume;
-        $consume->alimento_id=$alimento->id;
-        $consume->tipo=1;
+        $alimento = Alimento::where("nombre",$nombre)->get("id");
+        $resultado = json_decode($alimento);
+
+        $consume = new consumer;
+        $consume->alimento_id=$resultado[0]->id;
+        $consume->usuario_id=1;
+        $consume->tipo=4;
 
         $consume->save();
-        return ("/");
+        return redirect("/");
     }
-
-
-
 
 
     function getDesayuno()
     {//
         $cons=consumer::where("tipo",1)->get("alimento_id");
-        //return $cons;
 
         $resultado = json_decode($cons);
-        //$resultado->nombre;
 
         $aliment=[];//->nombres de alimentos, se van a imprimir
         $i=0;
@@ -78,10 +85,8 @@ class ConsumerController extends Controller
     function getAlmuerzo()
     {//
         $cons=consumer::where("tipo",2)->get("alimento_id");
-        //return $cons;
 
         $resultado = json_decode($cons);
-        //$resultado->nombre;
 
         $aliment=[];//->nombres de alimentos, se van a imprimir
         $i=0;
@@ -97,10 +102,8 @@ class ConsumerController extends Controller
     function getCena()
     {//
         $cons=consumer::where("tipo",3)->get("alimento_id");
-        //return $cons;
 
         $resultado = json_decode($cons);
-        //$resultado->nombre;
 
         $aliment=[];//->nombres de alimentos, se van a imprimir
         $i=0;
@@ -116,10 +119,8 @@ class ConsumerController extends Controller
     function getAperitivos()
     {//
         $cons=consumer::where("tipo",4)->get("alimento_id");
-        //return $cons;
 
         $resultado = json_decode($cons);
-        //$resultado->nombre;
 
         $aliment=[];//->nombres de alimentos, se van a imprimir
         $i=0;
