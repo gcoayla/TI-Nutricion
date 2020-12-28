@@ -149,18 +149,18 @@ class ConsumerController extends Controller
             $cantidad= $resultado[$i]->cantidad;
 
             $calorias_1=$resultado_alimen[0]->calorias;
-            $calorias_1=(int) $calorias_1;
+            $calorias_1=floatval( $calorias_1);
 
             $proteinas_1=$resultado_alimen[0]->proteinas;
-            $proteinas_1=(int) $proteinas_1;
+            $proteinas_1=floatval( $proteinas_1);
 
             $carbohidratos_1=$resultado_alimen[0]->carbohidratos;
-            $carbohidratos_1=(int)$carbohidratos;
+            $carbohidratos_1=floatval($carbohidratos);
 
             $grasas_1=$resultado_alimen[0]->grasas;
-            $grasas_1=(int) $grasas_1;
+            $grasas_1=floatval($grasas_1);
 
-            $cantidad=(int)$cantidad;
+            $cantidad=(float)$cantidad;
 
             $calorias=$calorias + ($calorias_1*$cantidad);
             $proteinas=$proteinas + ($proteinas_1*$cantidad);
