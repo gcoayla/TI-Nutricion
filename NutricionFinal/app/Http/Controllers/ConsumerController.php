@@ -130,7 +130,7 @@ class ConsumerController extends Controller
         return $aliment;
     }
 
-    function getValores()
+    function getValores($var)
     {//
         $cons=consumer::all();
 
