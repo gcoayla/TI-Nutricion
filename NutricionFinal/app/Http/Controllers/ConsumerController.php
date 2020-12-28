@@ -11,57 +11,60 @@ use Illuminate\Http\Request;
 class ConsumerController extends Controller
 {
     //
-    function agregar_desayuno($nombre)
+    function agregar_desayuno(Request $nombre)
     {
         $alimento = Alimento::where("nombre",$nombre)->get("id");
         $resultado = json_decode($alimento);
 
         $consume = new consumer;
         $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=1;
-        $consume->tipo=1;
+        $consume->usuario_id=$resultado[0]->id;
+        $consume->tipo=$resultado[0]->id;
 
         $consume->save();
         return redirect("/");
     }
-    function agregar_almuerzo($nombre)
+    function agregar_almuerzo(Request $nombre)
     {
         $alimento = Alimento::where("nombre",$nombre)->get("id");
         $resultado = json_decode($alimento);
 
         $consume = new consumer;
         $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=1;
-        $consume->tipo=2;
+        $consume->usuario_id=$resultado[0]->id;
+        $consume->tipo=$resultado[0]->id;
 
         $consume->save();
         return redirect("/");
     }
-    function agregar_cena($nombre)
+    }
+    function agregar_cena(Request $nombre)
     {
         $alimento = Alimento::where("nombre",$nombre)->get("id");
         $resultado = json_decode($alimento);
 
         $consume = new consumer;
         $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=1;
-        $consume->tipo=3;
+        $consume->usuario_id=$resultado[0]->id;
+        $consume->tipo=$resultado[0]->id;
 
         $consume->save();
         return redirect("/");
     }
-    function agregar_aperitivo($nombre)
+    }
+    function agregar_aperitivo(Request $nombre)
     {
         $alimento = Alimento::where("nombre",$nombre)->get("id");
         $resultado = json_decode($alimento);
 
         $consume = new consumer;
         $consume->alimento_id=$resultado[0]->id;
-        $consume->usuario_id=1;
-        $consume->tipo=4;
+        $consume->usuario_id=$resultado[0]->id;
+        $consume->tipo=$resultado[0]->id;
 
         $consume->save();
         return redirect("/");
+    }
     }
 
 
