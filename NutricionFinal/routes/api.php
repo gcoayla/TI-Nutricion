@@ -35,6 +35,11 @@ Route::get("almuerzo",[ConsumerController::class,'getAlmuerzo']);
 Route::get("cena",[ConsumerController::class,'getCena']);
 Route::get("aperitivos",[ConsumerController::class,'getAperitivos']);
 
+Route::get("calorias",[ConsumerController::class,'getCalorias']);
+Route::get("proteias",[ConsumerController::class,'getProteinas']);
+Route::get("carbohidratos",[ConsumerController::class,'getCarbohidratos']);
+Route::get("grasas",[ConsumerController::class,'getGrasas']);
+
 
 
 //http://127.0.0.1:8000/api/search/

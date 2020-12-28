@@ -21,7 +21,7 @@ class ConsumerController extends Controller
         $consume->save();
         return ("/");
     }
-    function agregar_desayuno($nombre)
+    function agregar_almuerzo($nombre)
     {
         $alimento = Alimento::where("nombre",$parametro)->get();
         $consume = new usuario_consume;
@@ -31,7 +31,7 @@ class ConsumerController extends Controller
         $consume->save();
         return ("/");
     }
-    function agregar_desayuno($nombre)
+    function agregar_cena($nombre)
     {
         $alimento = Alimento::where("nombre",$parametro)->get();
         $consume = new usuario_consume;
@@ -41,7 +41,7 @@ class ConsumerController extends Controller
         $consume->save();
         return ("/");
     }
-    function agregar_desayuno($nombre)
+    function agregar_aperitivo($nombre)
     {
         $alimento = Alimento::where("nombre",$parametro)->get();
         $consume = new usuario_consume;
@@ -59,28 +59,35 @@ class ConsumerController extends Controller
     function getDesayuno()
     {//
         $cons=consumer::where("tipo",1)->get("alimento_id");
+        //return $cons;
 
-        $aliment=[];
-        $i=1;
+        $resultado = json_decode($cons);
+        //$resultado->nombre;
+
+        $aliment=[];//->nombres de alimentos, se van a imprimir
+        $i=0;
         while($i<count($cons))
         {
-            $aliment[$i]=Alimento::where("id",intval(array($cons[$i])))->get("nombre");
+            $aliment[$i]=Alimento::where("id",$resultado[$i]->alimento_id)->get("nombre");//->first();//->nombre;//get("nombre");
             $i=$i+1;
         }
 
         return $aliment;
-
     }
 
     function getAlmuerzo()
     {//
         $cons=consumer::where("tipo",2)->get("alimento_id");
+        //return $cons;
 
-        $aliment=[];
-        $i=1;
+        $resultado = json_decode($cons);
+        //$resultado->nombre;
+
+        $aliment=[];//->nombres de alimentos, se van a imprimir
+        $i=0;
         while($i<count($cons))
         {
-            $aliment[$i]=Alimento::where("id",intval(array($cons[$i])))->get("nombre");
+            $aliment[$i]=Alimento::where("id",$resultado[$i]->alimento_id)->get("nombre");//->first();//->nombre;//get("nombre");
             $i=$i+1;
         }
 
@@ -90,12 +97,16 @@ class ConsumerController extends Controller
     function getCena()
     {//
         $cons=consumer::where("tipo",3)->get("alimento_id");
+        //return $cons;
 
-        $aliment=[];
-        $i=1;
+        $resultado = json_decode($cons);
+        //$resultado->nombre;
+
+        $aliment=[];//->nombres de alimentos, se van a imprimir
+        $i=0;
         while($i<count($cons))
         {
-            $aliment[$i]=Alimento::where("id",intval(array($cons[$i])))->get("nombre");
+            $aliment[$i]=Alimento::where("id",$resultado[$i]->alimento_id)->get("nombre");//->first();//->nombre;//get("nombre");
             $i=$i+1;
         }
 
@@ -105,12 +116,16 @@ class ConsumerController extends Controller
     function getAperitivos()
     {//
         $cons=consumer::where("tipo",4)->get("alimento_id");
+        //return $cons;
 
-        $aliment=[];
-        $i=1;
+        $resultado = json_decode($cons);
+        //$resultado->nombre;
+
+        $aliment=[];//->nombres de alimentos, se van a imprimir
+        $i=0;
         while($i<count($cons))
         {
-            $aliment[$i]=Alimento::where("id",intval(array($cons[$i])))->get("nombre");
+            $aliment[$i]=Alimento::where("id",$resultado[$i]->alimento_id)->get("nombre");//->first();//->nombre;//get("nombre");
             $i=$i+1;
         }
 
@@ -119,10 +134,34 @@ class ConsumerController extends Controller
 
     function getCalorias()
     {//
-            $cons=consumer::all()->get("alimento_id");
+        $cons=consumer::all("alimento_id");
+        $resultado = json_decode($cons);
 
-            return $cons;
+        $caloria=[];
+        $i=0;
+        while($i<count($cons))
+        {
+            $caloria[$i]=Alimento::where("id",$resultado[$i]->alimento_id)->get("calorias");
+            $i=$i+1;
+        }
 
+        //return $caloria;
+      //  $resultado2 = json_decode($caloria);
+
+
+        $j=0;
+        $i=0;
+        while($j<count($caloria))
+        {
+            $resultado2 = json_decode($caloria[$j]);
+
+
+
+            $i=$i+$resultado2;//[$j]->calorias;
+            $j=$j+1;
+        }
+
+        return $i;
     }
 
     function getProteinas()
@@ -140,7 +179,7 @@ class ConsumerController extends Controller
 
     }
 }
-/
+
 //get("alimento_id"); // id alimentos es la foreing key
         //$al=Alimento::where("id",$cons)->get("nombre");
 
