@@ -26,7 +26,7 @@ class Alimento1Seeder extends Seeder
         $aliment->save();
 
         $aliment1 = new Alimento();
-        $aliment1->nombre = "semola";
+        $aliment1->nombre = "naranja";
         $aliment1->calorias = "5";
         $aliment1->tipo = "vegetal";
         $aliment1->popularidad = "3";
@@ -37,7 +37,7 @@ class Alimento1Seeder extends Seeder
         $aliment1->save();
 
         $aliment2 = new Alimento();
-        $aliment2->nombre = "calabaza";
+        $aliment2->nombre = "fresa";
         $aliment2->calorias = "10";
         $aliment2->tipo = "vegetal";
         $aliment2->popularidad = "0";
@@ -48,7 +48,7 @@ class Alimento1Seeder extends Seeder
         $aliment2->save();
 
         $aliment3 = new Alimento();
-        $aliment3->nombre = "semola";
+        $aliment3->nombre = "papaya";
         $aliment3->calorias = "5";
         $aliment3->tipo = "vegetal";
         $aliment3->popularidad = "3";
@@ -59,7 +59,7 @@ class Alimento1Seeder extends Seeder
         $aliment3->save();
 
         $aliment4 = new Alimento();
-        $aliment4->nombre = "calabaza";
+        $aliment4->nombre = "maracuya";
         $aliment4->calorias = "10";
         $aliment4->tipo = "vegetal";
         $aliment4->popularidad = "0";
@@ -70,7 +70,7 @@ class Alimento1Seeder extends Seeder
         $aliment4->save();
 
         $aliment5 = new Alimento();
-        $aliment5->nombre = "semola";
+        $aliment5->nombre = "durazno";
         $aliment5->calorias = "5";
         $aliment5->tipo = "vegetal";
         $aliment5->popularidad = "3";
@@ -81,7 +81,7 @@ class Alimento1Seeder extends Seeder
         $aliment5->save();
 
         $aliment6 = new Alimento();
-        $aliment6->nombre = "calabaza";
+        $aliment6->nombre = "platano";
         $aliment6->calorias = "10";
         $aliment6->tipo = "vegetal";
         $aliment6->popularidad = "0";
@@ -92,7 +92,7 @@ class Alimento1Seeder extends Seeder
         $aliment6->save();
 
         $aliment7 = new Alimento();
-        $aliment7->nombre = "semola";
+        $aliment7->nombre = "granadilla";
         $aliment7->calorias = "5";
         $aliment7->tipo = "vegetal";
         $aliment7->popularidad = "3";
@@ -103,7 +103,7 @@ class Alimento1Seeder extends Seeder
         $aliment7->save();
 
         $aliment8 = new Alimento();
-        $aliment8->nombre = "calabaza";
+        $aliment8->nombre = "tomate";
         $aliment8->calorias = "10";
         $aliment8->tipo = "vegetal";
         $aliment8->popularidad = "0";
@@ -114,7 +114,7 @@ class Alimento1Seeder extends Seeder
         $aliment8->save();
 
         $aliment9 = new Alimento();
-        $aliment9->nombre = "semola";
+        $aliment9->nombre = "cebolla";
         $aliment9->calorias = "5";
         $aliment9->tipo = "vegetal";
         $aliment9->popularidad = "3";
@@ -125,7 +125,7 @@ class Alimento1Seeder extends Seeder
         $aliment9->save();
 
         $aliment10 = new Alimento();
-        $aliment10->nombre = "calabaza";
+        $aliment10->nombre = "kiwi";
         $aliment10->calorias = "10";
         $aliment10->tipo = "vegetal";
         $aliment10->popularidad = "0";
