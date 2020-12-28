@@ -98,7 +98,7 @@ $( document ).ready(function() {
     $('.box-res-busqueda').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/consum/',
+            url: 'http://127.0.0.1:8000/api/consum',
             type: 'post',
             data:$(this).serialize(),
             success:function(){
