@@ -66967,7 +66967,18 @@ function setRotation(percentage, id) {
   container.style.transform = "rotate(".concat(rotation, "deg)");
 }
 
+function llenado() {
+  fetch("http://127.0.0.1:8000/api/valores").then(function (resp) {
+    return resp.json();
+  }).then(function (data) {
+    console.log(data);
+  })["catch"](function (error) {
+    console.log(error);
+  });
+}
+
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
+  llenado();
   generar(50, "Proteinas", 100, 120);
   jquery__WEBPACK_IMPORTED_MODULE_2___default()("#Proteinas-content").css("background-image", "linear-gradient(var(--red-dark) 50%, var(--red) 50%)");
   generar(70, "Carbohidratos", 200, 250);

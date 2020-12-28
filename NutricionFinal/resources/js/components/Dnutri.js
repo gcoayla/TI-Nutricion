@@ -36,8 +36,20 @@ function setRotation(percentage, id) {
     container.style.transform = `rotate(${rotation}deg)`
 }
 
+function llenado(){
+        fetch("http://127.0.0.1:8000/api/valores/")
+        .then((resp) => resp.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
 
 $( document ).ready(function() {
+    llenado();
     generar(50,"Proteinas",100,120);
     $("#Proteinas-content").css("background-image","linear-gradient(var(--red-dark) 50%, var(--red) 50%)");
     generar(70,"Carbohidratos",200,250);
@@ -145,6 +157,7 @@ $( document ).ready(function() {
             
         }
     });
+
 });
 
 function Dnutri() {
