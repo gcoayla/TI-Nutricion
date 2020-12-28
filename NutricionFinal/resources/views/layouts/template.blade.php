@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <!-- Estilos -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet" id="EstilosPrin">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,700;1,400;1,700&display=swap" rel="stylesheet">

@@ -171,7 +171,7 @@ $( document ).ready(function() {
             
         }
     });
-
+    
 });
 
 function Dnutri() {

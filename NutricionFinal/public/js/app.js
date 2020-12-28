@@ -67214,6 +67214,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
+function freshStyle(stylesheet) {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('#EstilosPrin').attr('href', stylesheet);
+}
+
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
   var url = "http://127.0.0.1:8000/api/desayuno/";
   console.log(url);
@@ -67226,7 +67231,63 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
       var caja2 = '</h5><input name="alimid" type="hidden" value="7845"/><h5 className="medida-alim modmedida">100 gr.</h5><input type="submit" className="env-alim" value="Eliminar"/></form>';
       caja += element[0].nombre;
       caja += caja2;
-      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#subaconsdesayuno").html(caja);
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#subaconsdesayuno").append(caja);
+      var restyled = 'css/estilos.css';
+      freshStyle(restyled);
+    });
+  })["catch"](function (error) {
+    console.log(error);
+  });
+  var url = "http://127.0.0.1:8000/api/almuerzo/";
+  console.log(url);
+  fetch(url).then(function (resp) {
+    return resp.json();
+  }).then(function (data) {
+    data.forEach(function (element) {
+      console.log(element[0].nombre);
+      var caja = "<form className='box-res-busqueda' method='post'><h5 className='nombre-alim'>";
+      var caja2 = '</h5><input name="alimid" type="hidden" value="7845"/><h5 className="medida-alim modmedida">100 gr.</h5><input type="submit" className="env-alim" value="Eliminar"/></form>';
+      caja += element[0].nombre;
+      caja += caja2;
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#subaconsalmuerzo").append(caja);
+      var restyled = 'css/estilos.css';
+      freshStyle(restyled);
+    });
+  })["catch"](function (error) {
+    console.log(error);
+  });
+  var url = "http://127.0.0.1:8000/api/cena/";
+  console.log(url);
+  fetch(url).then(function (resp) {
+    return resp.json();
+  }).then(function (data) {
+    data.forEach(function (element) {
+      console.log(element[0].nombre);
+      var caja = "<form className='box-res-busqueda' method='post'><h5 className='nombre-alim'>";
+      var caja2 = '</h5><input name="alimid" type="hidden" value="7845"/><h5 className="medida-alim modmedida">100 gr.</h5><input type="submit" className="env-alim" value="Eliminar"/></form>';
+      caja += element[0].nombre;
+      caja += caja2;
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#subaconscena").append(caja);
+      var restyled = 'css/estilos.css';
+      freshStyle(restyled);
+    });
+  })["catch"](function (error) {
+    console.log(error);
+  });
+  var url = "http://127.0.0.1:8000/api/aperitivos/";
+  console.log(url);
+  fetch(url).then(function (resp) {
+    return resp.json();
+  }).then(function (data) {
+    data.forEach(function (element) {
+      console.log(element[0].nombre);
+      var caja = "<form className='box-res-busqueda' method='post'><h5 className='nombre-alim'>";
+      var caja2 = '</h5><input name="alimid" type="hidden" value="7845"/><h5 className="medida-alim modmedida">100 gr.</h5><input type="submit" className="env-alim" value="Eliminar"/></form>';
+      caja += element[0].nombre;
+      caja += caja2;
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("#subaconssnacks").append(caja);
+      var restyled = 'css/estilos.css';
+      freshStyle(restyled);
     });
   })["catch"](function (error) {
     console.log(error);
